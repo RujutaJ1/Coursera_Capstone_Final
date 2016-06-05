@@ -1,0 +1,78 @@
+Next Word Prediction Shiny App: Report
+========================================================
+
+
+
+
+- Created for : Coursera Data Science Specialization Course  
+  - Capstone Project for Coursera In association with SwiftKey 
+- Author: Rujuta Joshi
+- Date: 3rd June 2016
+
+
+
+
+About the App  
+========================================================
+Welcome to the world of Prediction ! This App predicts the next word when you type in a few words. Next word prediction is used in some of the following use cases.
+ - Mobile devices : enhanced typing
+ - Speech recognition 
+
+Design goals for the data product:
+The data product for next word prediction is designed basis following considerations.
+- Fast 
+- Right answers & Intuitive
+- User-friendly Interface
+- Small footprint - able to load easily
+
+
+
+
+Methodology Used
+========================================================
+Data Source used :
+HC Coursera,data from 2.3 millions of Tweet, 1 million of news, 0.9 million of blog posts (only English Language data was used)
+
+
+Methodology : 
+Broadly speaking, following is the methodology. 
+- create N-grams from the database. N-grams are strings of words.  
+- for next word prediction, search through the database,check all words that can come after the typed in string
+- prediction basis the probabilities of the various possible next words
+- For this app, R Packages are used for better efficiency. Among them are NLP related packages, string and data table related packages.
+
+
+Approach For The App
+========================================================
+
+Steps to Process the data 
+- 	Downloading the data from HC Coursera  
+- 	Sampling : 50% of the database ( Twitter, Blog, News) sampled to train the model
+-	  Preprocessing included 
+      - Conversion to lower case
+      - removal of punctuation,white space and numbers
+-	Tokenisation and production of N grams - The final model uses  the unigrams, bigrams, trigrams. )
+- Comparison of the input with N grams and prediction 
+
+Models And Smoothing Methods Evaluated, And Final Approach
+============================================================
+
+Methods considered and evaluated  
+
+- Kneser Ney Smoothing: While this is more sophisticated technique, this was not used in the program in order to achieve faster processing. 
+
+- Back off mechanism: this mechanism starts with the highest N Gram available to predict the next word, if string is not found then it will go to a lower order N Gram and check. This has been used for the final product. 
+
+How To Use The App, & Further Details
+==================================================================
+
+Instructions : 
+- Please click on the link to access the app. 
+- <a> https://rujuta.shinyapps.io/shiny/ </a>
+- Please enter a few words ( more than 2/3) for better results, enter 'Submit' for the prediction of the next word. 
+- The app also gives other possible next words, time taken for processing , and confidence level for the prediction.
+
+The details of the code are given on this github page. 
+<a>https://github.com/RujutaJ1/Coursera_Capstone_Final</a>
+
+THANK YOU FOR READING !!
